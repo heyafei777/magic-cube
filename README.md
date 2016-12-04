@@ -1,2 +1,2 @@
-# magin-cube
+# magic-cube
 my first work
