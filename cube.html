@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>3D魔方</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#stage{
+			width: 600px;
+			height: 600px;
+			position: relative;
+			margin: 100px auto;
+			perspective: 1000px;
+			border: 2px solid transparent;
+		}
+		#cube{
+			width: 500px;
+			height: 500px;
+			position: absolute;
+			margin: 10px;
+			top: 50px;
+			left: 50px;
+			transform-style:preserve-3d;
+			animation: magic 6s linear 0s infinite normal;
+		}
+		@keyframes magic{
+			0%{
+				/*transform:rotate3d(1,1,1,0deg)*/
+				transform:  rotateX(0deg) rotateY(0deg);
+			}
+			100%{
+				/*transform:rotate3d(1,1,1,360deg)*/
+				transform:  rotateX(360deg) rotateY(360deg);
+			}
+		}
+		#cube div{
+			width: 300px;
+			height: 300px;
+			font-size:80px;
+			font-weight: bold;
+			text-align: center;
+			line-height: 300px;
+			position: absolute;
+			top: 100px;
+			left: 100px;
+			background: -webkit-linear-gradient(left, #000 1px, #000 3px,transparent 0px), 
+						-webkit-linear-gradient(top, #000 1px, #000 3px,transparent 0px);
+			border: 3px solid #000;
+			border-top: none;
+			border-left: none;
+			background-size: 100px 100px;
+		}
+		#cube div.f{
+			transform: translateZ(150px);
+			background-color: #fff;
+		}
+		#cube div.b{
+			transform: translateZ(-150px);
+			background-color: yellow;
+		}
+		#cube div.l{
+			transform: rotateY(-90deg)  translateZ(150px);
+			background-color: orange;
+		}
+		#cube div.r{
+			transform: rotateY(90deg) translateZ(150px);
+			background-color: red;
+		}
+		#cube div.u{
+			transform: rotateX(90deg) translateZ(150px);
+			background-color: blue;
+		}
+		#cube div.d{
+			transform: rotateX(-90deg) translateZ(150px);
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div id="stage">
+		<div id="cube">
+			<div class="f"></div>
+			<div class="b"></div>
+			<div class="l"></div>
+			<div class="r"></div>
+			<div class="u"></div>
+			<div class="d"></div>
+		</div>
+	</div>
+</body>
+</html>
